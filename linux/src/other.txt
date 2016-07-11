@@ -20,4 +20,3 @@
 	Script done on Mon 11 Jul 2016 02:41:02 PM CST
 shell会话信息保存到typescript文件中,typescript为默认文件，script a.txt表示保存到a.txt文件中。
 script -a a.txt表示在a.txt文件中继续追加。
-4.tar -zxvf aaa.tar.gz 解压压缩文件

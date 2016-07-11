@@ -8,6 +8,7 @@
 	cd ..返回到上级目录
 	cd / 是回到根目录
 	cd .  是当前目录
+	cd后面什么都不写表示打开的是当前用户的主目录。
 	~表示主目录，可以使用echo ~打印查看，mac的主目录为/Users/xukaiqiang,linux主目录为/home,/root
 2.cp复制文件
 	例如：cp   a.txt  /home  将a.txt复制到home目录下面。

@@ -32,3 +32,19 @@
 	比如：
 	root@iZ25n7whddjZ:~# which  java
 	/usr/jdk1.7/bin/java
+15.alias  别名，如果命令经常使用，但是命令太长，可以建立别名，轻松执行该命令。
+	例如：ls -l /home     列出home目录下的所有文件
+	设置别名：alias llh='ls -l /home'  即可。
+	在mac中设置别名的方法：
+	cd ~  
+	vim .bashrc  
+	alias xxx=****  
+	例:  
+	alias mysqladmin=/usr/local/mysql/bin/mysqladmin  
+	退出保存  
+	source .bashrc  -----  使其生效  
+	如果还不行：
+	打开
+	~/.bash_profile
+	加入
+	source ~/.bashrc

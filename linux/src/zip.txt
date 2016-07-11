@@ -1,0 +1,10 @@
+压缩和解压缩
+1.压缩和解压缩
+压缩一个文件
+zip  aa.zip   文件名   实例  zip    aa.zip   kkk.bak     表示将kkk.bak文件压缩为aa.zip的压缩文件
+压缩多个文件
+zip  aa.zip   文件名1 文件名2。。。。。   
+压缩一个文件夹
+zip -r aa.zip  文件夹路径     实例   zip  -r aa.zip  /home/test       表示将test文件夹压缩成aa.zip的压缩文件
+解压缩命令：unzip   aa.zip    
+2.tar -zxvf aaa.tar.gz 解压压缩文件
