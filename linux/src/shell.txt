@@ -1,0 +1,11 @@
+1.shell，用户与操作系统的接口，命令---shell--操作系统    操作系统的翻译官。
+2.shell相当于windows中的批处理。
+3.查看当前使用的是那种shell?
+	1.env  | more    该命令可以显示当前操作系统 环境变量
+	2.ps
+4.设置shell种类
+	chsh -s /bin/csh 
+	chsh -s /bin/bash  中国大陆
+	需要注销才能看到效果
+5.查看linux装了几种shell
+	ls -l /bin/*sh
