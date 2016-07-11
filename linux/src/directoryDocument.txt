@@ -24,7 +24,7 @@
 6.touch新建一个文件
 	touch   a.txt  创建a.txt文件
 7.mv移动、修改文件名
-	mv  a  /home   将a文件夹移动到home目录下
+	mv  a  /home   将a文件夹移动到home目录下，假如a文件存在于/home中，执行命令将会覆盖原来的a文件。
 	mv   a  b   将a文件名称修改为b
 8.rm删除文件
 	rm -rf a  强制删除a文件 -r表示递归删除-f表示force强制删除
