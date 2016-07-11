@@ -1,0 +1,8 @@
+linux中的用户和组
+1.useradd xukaiqiang添加一个用户
+2.passwd xukaiqiang给新创建的用户添加密码
+3.cat /etc/passwd 查看所有的用户
+4.cat /etc/group | more 分页查看所有的组
+	|表示管道命令，将前面命令执行的结果交给后面的命令进行处理。
+5.groupadd policeman  添加一个警察组
+6.
