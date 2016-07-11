@@ -81,3 +81,4 @@ R表示可读，4也代表可读，w可写，2表示可写，x可执行，1表�
 	例如：
 	root@iZ25n7whddjZ:~# file sh-1.4.4/
 	sh-1.4.4/: directory 
+18.du -sh查看文件的大小
