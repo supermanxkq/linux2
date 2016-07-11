@@ -1,8 +1,17 @@
 linux中的用户和组
+操作系统中的用户都是有属于它的一个分组的，就像一个人出生之后必定是属于一个国家的，一个用户可以存在多个组中
+，一个用户属于哪个组就会拥有哪个组的权限。
 1.useradd xukaiqiang添加一个用户
 2.passwd xukaiqiang给新创建的用户添加密码
 3.cat /etc/passwd 查看所有的用户
 4.cat /etc/group | more 分页查看所有的组
 	|表示管道命令，将前面命令执行的结果交给后面的命令进行处理。
 5.groupadd policeman  添加一个警察组
-6.
+6.创建用户，并同时指定将该用户分配到组
+	useradd -g policeman along  表示将along的用户添加到policeman的用户组中
+	使用cat /etc/passwd查看新建的用户
+	lisi:x:1004:1003::/home/lisi:
+	lisi用户名，x表示加密，1004表示用户ID，1003表示组Id,/home/lisi表示用户主目录
+7.将tufei用户组的ashuai转移到policeman组
+	usermod -g policeman ashuai
+	

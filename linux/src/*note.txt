@@ -2,4 +2,6 @@
 1.top
 2.df
 3.mount\unmount
-4.
+4.history
+5.netstat
+6.ps
