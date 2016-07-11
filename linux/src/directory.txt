@@ -30,3 +30,9 @@
 	head -10 a.txt  显示前10行
 	tail -10 a.txt  显示最后10行
 	tail -f  a.txt  动态显示a.txt,一般用于动态查看日志信息
+11.ls命令的含义是list显示当前目录中的文件名字
+	ls  /home显示home目录下面的所有的文件名
+	ls -a显示隐藏的
+	ls -l查看详细文件属性
+12.cat查看文件内容
+	cat  a.txt
