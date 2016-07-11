@@ -1,0 +1,48 @@
+linux中的任务调度命令
+1.什么是任务调度？
+任务调度是指系统在某个时间执行特定命令/程序
+例如：系统每天凌晨2点备份mysql数据库
+2.任务调度分类
+	1.系统工作：有些重要的工作必须周而复始地执行，如病毒扫描等。
+	2.个别用户工作：个别用户可能希望执行某些程序，比如DB备份。
+3.crontab -l列出当前有那些任务调度
+4.终止任务调度crontab -r 
+5.crontab -e 进入任务调度编辑
+6.实例1:每分钟执行命令将date写入到mydate文件中
+   touch   /home/mydate
+   crontab -e
+   输入命令
+   * * * * *  date >> /home/mydate
+   wq保存退出即可。
+7.实例2：将调度命令单独写在一个mydate.sh文件中
+	touch mydate.sh
+	vi  mydate.sh输入命令date /home/mydate
+	wq保存
+	chmod u+x mydate.sh给所有者添加可执行权限
+	crontab -e
+	加入
+	* * * * * /home/mydate.sh即可。
+8.linux备份MySQL数据库实例
+####################################################################################
+#DataBase Name
+DB_NAME="blog"
+#DataBase User
+DB_USER="root"
+#DataBase PassWord
+DB_PASS="root"
+#MySQL mysqldump dir
+BIN_DIR="/alidata/server/mysql/bin"
+#backup dir
+BCK_DIR="/usr/bak"
+#current datetime
+DATE=`date +%Y%m%d_%H%M%S`
+
+#backup database
+$BIN_DIR/mysqldump -u $DB_USER -p$DB_PASS $DB_NAME | gzip > $BCK_DIR/$DB_NAME$DATE.sql.gz
+#delete file before 1 minute   -mmin +1
+#delete fiel before 7 days     -mtime +7
+#out errorlog   >>$BCK_DIR/error.log 2>&1
+#find $BCK_DIR -name "*.sql.gz" -type f -mmin +1 -exec rm -rf {} \; >  /dev/null 2>&1
+find $BCK_DIR -name "*.sql.gz" -type f -mtime +7 -exec rm -rf {} \; > /dev/null 2>&1
+
+####################################################################################
