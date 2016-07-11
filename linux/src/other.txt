@@ -1,0 +1,22 @@
+其他实用程序
+1.echo显示文本
+	例如：echo 'xukaiqiang'在终端输出徐凯强
+2.date显示日期和时间
+3.script记录shell会话信息
+	root@iZ25n7whddjZ:~# script
+	Script started, file is typescript
+	root@iZ25n7whddjZ:~# touch a.txt
+	root@iZ25n7whddjZ:~# echo 'aaa' >b.txt
+	root@iZ25n7whddjZ:~# ls
+	a.txt  b.txt  sh-1.4.4	typescript
+	root@iZ25n7whddjZ:~# exitScript done, file is typescript
+	root@iZ25n7whddjZ:~# cat typescript 
+	Script started on Mon 11 Jul 2016 02:40:37 PM CST
+	root@iZ25n7whddjZ:~# touch a.txt
+	root@iZ25n7whddjZ:~# echo 'aaa' >b.txt
+	root@iZ25n7whddjZ:~# ls
+	a.txt  b.txt  sh-1.4.4	typescript
+	root@iZ25n7whddjZ:~# exit
+	Script done on Mon 11 Jul 2016 02:41:02 PM CST
+shell会话信息保存到typescript文件中,typescript为默认文件，script a.txt表示保存到a.txt文件中。
+script -a a.txt表示在a.txt文件中继续追加。
