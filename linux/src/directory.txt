@@ -1,0 +1,32 @@
+|
+|
+|linux 中关于文件、目录的命令
+|
+|
+1.cd（change directory）更改工作目录。
+	例如：cd /home  打开home主目录
+	cd ..返回到上级目录
+2.cp复制文件
+	例如：cp   a.txt  /home  将a.txt复制到home目录下面。
+	cp -r    a   /home   将a文件夹复制到home目录下   -r表示a目录中包含其他内容
+3.scp远程复制文件
+	scp error.txt  root@123.57.73.59:/usr 从本地将文件复制到远程服务器
+	scp  root@123.57.73.59:/usr/error.txt /Users/xukaiqiang  从远程服务器将文件复制到本地
+	如果复制的是非空文件夹加-r
+4.mkdir创建文件夹
+	mkdir   aa 创建aa文件夹
+5.rmdir删除空文件夹   
+	rmdir  aa 删除空文件夹
+6.touch新建一个文件
+	touch   a.txt  创建a.txt文件
+7.mv移动、修改文件名
+	mv  a  /home   将a文件夹移动到home目录下
+	mv   a  b   将a文件名称修改为b
+8.rm删除文件
+	rm -rf a  强制删除a文件 -r表示递归删除-f表示force强制删除
+9.grep查找字符串
+	grep   'Exception' a.txt在a.txt文件中查找Exception关键字
+10.head、tail显示文件头部/尾部
+	head -10 a.txt  显示前10行
+	tail -10 a.txt  显示最后10行
+	tail -f  a.txt  动态显示a.txt,一般用于动态查看日志信息
