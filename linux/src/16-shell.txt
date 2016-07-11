@@ -3,9 +3,107 @@
 3.查看当前使用的是那种shell?
 	1.env  | more    该命令可以显示当前操作系统 环境变量
 	2.ps
+	3.echo $SHELL
+	/bin/bash
 4.设置shell种类
 	chsh -s /bin/csh 
 	chsh -s /bin/bash  中国大陆
 	需要注销才能看到效果
 5.查看linux装了几种shell
-	ls -l /bin/*sh
+	ls -l /bin/*sh	
+------------------------------------------------------------------------
+1.#！指定执行脚本的shell.例如bash,tcshell等。
+2.#表示注释
+3.创建shell程序的步骤：
+	①创建一个包含命令和控制结构的文件。
+	②添加可执行权限。chmod u+x
+	③执行./example也可以使用sh example执行
+4.shell变量
+	①临时变量
+	临时变量是shell程序内部定义的，其使用范围仅限于定义它的程序，对其他程序不可见。包括用户自定义变量。
+	位置变量。
+	②永久变量
+	永久变量是环境变量，其值不随shell脚本的执行结束而消失。例如：$SHELL
+5.定义一个变量
+	①NUM=100
+	echo  $NUM
+	结果：100
+	②TIME=`date`
+	echo $TIME
+	显示当前的时间
+	`为1键盘中1前面的那个按键。
+6.单引号和双引号的区别
+	echo 'time is  $TIME' 输出time is  $TIME
+	echo "time is  $TIME" 输出time is 2016年07月11日
+7. 查看临时变量和永久变量set | more
+8.unset  NUM删除定义的变量
+9.位置变量
+	ls -l file1  file2 file3
+	$0是ls -l
+	$1 file1
+	$2 file2 
+	$3 file3
+	$n中n的范围是（0-9）
+10.特殊变量
+	$?执行上一个命令的返回值0或者非0，0表示执行成功。非0表示执行不成功。
+11.其他变量
+	1.$*这个程序的所有变量
+	2.$#这个程序的所有参数个数
+	3.$$这个程序的PID
+	4.$!执行上一个后台命令的PID	
+	5.$?执行上一个命令的返回值
+12.一个小例子
+special.var输出特殊变量的值，调用方法，sh special.var
+================================================
+	#test shell special variable
+	#usage sh special.var file1 file2 file3
+	
+	echo '$# is:' $#
+	echo '$* is:' $*
+	echo '$$ is:' $$
+	echo '$? is:' $?
+	echo '$0 is:' $0
+================================================
+执行结果：
+xukaiqiangdeMacBook-Pro:shell xukaiqiang$ sh special.var file1 file2 file3
+$# is: 3
+$* is: file1 file2 file3
+$$ is: 15749
+$? is: 0
+$0 is: special.var
+================================================
+13.sh -x read  -x表示查看脚本是如何执行的。+表示执行的命令
+14.小例子2，使用read读入参数
+read程序
+=================================================
+#test read commond
+read  first second third
+echo 'first  parameter is:' $first
+echo 'second parameter is:' $second
+echo 'third parameter  is:' $third
+=================================================
+执行结果：
+xukaiqiangdeMacBook-Pro:shell xukaiqiang$ sh -x read
++ read first second third
+100 200 300
++ echo 'first  parameter is:' 100
+first  parameter is: 100
++ echo 'second parameter is:' 200
+second parameter is: 200
++ echo 'third parameter  is:' 300
+third parameter  is: 300
+=================================================
+注：如果输入3个参数，则全部输出，如果输入两个参数则输出两个，最后一个输出空，如果输出为四个参数，则最后一个输出两个参数。
+15.expr命令，对整数型变量进行算数运算,8/3=2
+  expr 3 + 5  中间有空格
+  expr $var1 - 5
+  expr $var1 / $var2
+  expr $var1  \* 10  需要添加转义服
+  
+在批量添加用户名的时候会使用到。例如：aa1 aa2 aa3 aa4
+16.复杂运算
+	expr  `expr 5 + 7`/$var1
+17.将运算结果赋值给变量
+	var4=`expr $var1/$var2`
+	
+	
