@@ -1,0 +1,4 @@
+linux操作tomcat的命令
+1.linux中tomcat服务器启动的命令：
+	先进入到tomcat的bin目录中，然后  ./startup.sh    执行命令启动tomcat服务器
+        ./shutdown.sh 执行命令停止tomcat服务器

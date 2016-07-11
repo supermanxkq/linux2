@@ -1,0 +1,3 @@
+linux中，MySQL的一些操作命令
+1.linux中mysql服务启动命令   service mysqld start
+2.服务停止命令  service mysqld stop
