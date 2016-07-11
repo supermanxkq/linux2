@@ -1,0 +1,10 @@
+1.查看xxx端口是否被占用
+root@iZ25n7whddjZ:~# netstat -tunpl  |  grep  8080
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      5740/java 
+2.ps -ef   | grep  redis    过滤查看是否有redis进程。
+3.ps -aux | grep   java     过滤查看进程。
+3.kill -9  pid   杀死进程，pid可以根据netstat命令进行查看
+	例如：kill -9  2322
+4.top 相当于windows中的任务管理器，按q退出界面。
+5.top -d 10   10秒更新一次进程信息 
+输入u然后输入root可以查看root用户的进程。
