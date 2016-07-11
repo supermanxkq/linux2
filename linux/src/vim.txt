@@ -1,0 +1,10 @@
+vim编辑器
+1.vi  a.txt编辑a.txt文件
+	输入命令之后，按i或者a，出现光标。
+	按esc，输入:q!不保存，直接退出，:wq表示保存并退出
+2.输入：set number显示行号
+3.输入：set nonumber不显示行号
+4.在vim中可以使用如下快捷键
+	ctrl+w删除单词
+	ctrl+u删除一行命令
+	ctrl+h删除一个字符

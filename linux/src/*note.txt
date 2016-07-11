@@ -1,0 +1,5 @@
+备注需要添加的命令：
+1.top
+2.df
+3.mount\unmount
+4.
