@@ -51,3 +51,7 @@ JAVA=`/usr/bin/grep ssh`
 	test -s file文件大小是否非0
 使用方法：
 	if[ -x /usr/bin/ssh] 测试是否可执行
+3.-a 在if中表示逻辑与
+  -o 表示逻辑或
+4.exit 0表示退出
+5.
