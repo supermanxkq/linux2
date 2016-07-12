@@ -72,7 +72,7 @@ $$ is: 15749
 $? is: 0
 $0 is: special.var
 ================================================
-13.sh -x read  -x表示查看脚本是如何执行的。+表示执行的命令
+13.sh -x read  -x表示查看脚本是如何执行的。read表示执行的命令
 14.小例子2，使用read读入参数
 read程序
 =================================================
@@ -110,6 +110,27 @@ third parameter  is: 300
 	echo "Hi, $as"
 	就不会输出“Hi, hello worlds”，而是输出“Hi，”。这是因为Shell把$as当成一个变量，而$as未被赋值，其值为空。正确的方法是：
 	echo "Hi, ${a}s"
-
-
-	
+19.for循环
+=================================================
+#!/bin/bash
+#test for
+for  DAY in MONDAY TUESDAY WENSDAY THUHTHDAY FRIDAY SATARDAY SUNDAY
+do
+	echo "the day is $DAY"
+done
+=================================================
+执行结果：
+the day is MONDAY
+the day is TUESDAY
+the day is WENSDAY
+the day is THUHTHDAY
+the day is FRIDAY
+the day is SATARDAY
+the day is SUNDAY
+=================================================
+20.文件提取命令awk -F
+	例如：提取：/etc/passwd中，pid为0的用户名
+	root@iZ25n7whddjZ:~# awk -F: '$3==0 {print $1}' /etc/passwd
+	root
+21.检测系统中密码为空的用户
+	awk -F: 'length($2)==0 {print $1}' /etc/shadow
