@@ -105,5 +105,11 @@ third parameter  is: 300
 	expr  `expr 5 + 7`/$var1
 17.将运算结果赋值给变量
 	var4=`expr $var1/$var2`
-	
+18.输出需要注意的地方
+	a = "hello world"
+	echo "Hi, $as"
+	就不会输出“Hi, hello worlds”，而是输出“Hi，”。这是因为Shell把$as当成一个变量，而$as未被赋值，其值为空。正确的方法是：
+	echo "Hi, ${a}s"
+
+
 	
