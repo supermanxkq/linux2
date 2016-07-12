@@ -1,0 +1,53 @@
+变量测试语句
+
+1.小例子（条件控制语句if...elseif  else  fi）
+=======================================================
+#!/bin/bash
+#test  a  program started, if no  started,started.
+echo  "we are test  java  started......"
+# JAVA is  a  variable record java  starting
+
+JAVA=""
+if [ "$JAVA" = "" ]
+        then
+                echo  "JAVA is null"
+        elif [ "$JAVA" = "aaa" ]
+        then
+                echo "JAVA =aaa,-----$JAVA"
+        else
+                echo "JAVA is not  aaa,JAVA is $JAVA"
+fi
+=======================================================
+运行结果：
+xukaiqiangdeMacBook-Pro:shell xukaiqiang$ sh start.bat 
+we are test  java  started......
+JAVA is null
+=======================================================
+查看进程是否启动
+JAVA=`/usr/bin/grep ssh`
+将以上命令替换，来判断程序是否启动。
+
+2.变量测试语句
+字符串测试
+	test str1=str2测试字符串是否相等
+	test str1!=str2测试字符串是否不相等
+	test str1  测试字符串是否不为空
+	test -n str1测试字符串是否不为空
+	test -z str1测试字符串是否为空
+整数测试
+	test int1 -eq int2测试int1是否=int2
+	test int1 -ge int2测试int1是否>=int2
+	test int1 -gt int 测试int1是否>int2
+	test int1 -le int2测试int1是否<=int2
+	test int1 -lt int2测试int1是否<int2
+	test int1 -ne int2测试整数是否相等
+文件测试
+	test -d file测试文件是否为目录
+	test -f file测试文件是否常规文件
+	test -r file指定文件是否可读
+	test -x file指定文件是否可执行
+	test -w file指定文件是否可写
+	test -a file指定文件是否存在
+	test -s file文件大小是否非0
+使用方法：
+	if[ -x /usr/bin/ssh] 测试是否可执行
