@@ -8,3 +8,17 @@ tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      
 4.top 相当于windows中的任务管理器，按q退出界面。
 5.top -d 10   10秒更新一次进程信息 
 输入u然后输入root可以查看root用户的进程。
+6.查看指定名称的进程信息
+	pgrep ssh
+	运行结果：
+	root@iZ25n7whddjZ:~# pgrep  ssh
+	790
+	30579
+同时显示PID和ProcessName : –l
+	pgrep -l sshd
+-o 当匹配多个进程时，显示进程号最小的那个
+	pgrep -l -o  sshd
+-n 当匹配多个进程时，显示进程号最大的那个
+	pgrep -l -n sshd
+7.使用pkill	commond 杀死进程
+	pkill  sshd
